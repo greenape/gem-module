@@ -1,0 +1,42 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module gememu ! in 
+    interface  ! in :gememu
+        module emulator ! in :gememu:gememu.f90
+            real, allocatable,dimension(:,:) :: xmod
+            real, allocatable,dimension(:) :: ainvt
+            integer :: nreg
+            real, allocatable,dimension(:) :: max_bn
+            real, allocatable,dimension(:,:) :: inv_hainvh
+            real, allocatable,dimension(:) :: hdiff
+            real, allocatable,dimension(:) :: betahat
+            real, allocatable,dimension(:) :: min_bn
+            integer :: ninputs
+            real, allocatable,dimension(:,:) :: ainvh
+            real :: scalesd
+            real, allocatable,dimension(:) :: tainvh
+            real, allocatable,dimension(:,:) :: ainv
+            real, allocatable,dimension(:) :: g
+            real, allocatable,dimension(:) :: h
+            integer :: nmod
+            real, allocatable,dimension(:) :: roughness
+            real :: prec
+            real, allocatable,dimension(:) :: t
+            real :: scalemean
+        end module emulator
+        subroutine init(path) ! in :gememu:gememu.f90
+            use emulator
+            character*(*), intent(in) :: path
+        end subroutine init
+        subroutine nextpoint(xpred,x,sd) ! in :gememu:gememu.f90
+            use emulator
+            real dimension(:), intent(in) :: xpred
+            real, intent(out) :: x
+            real, intent(out) :: sd
+        end subroutine nextpoint
+    end interface 
+end python module gememu
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
