@@ -11,7 +11,7 @@ def diag(x):
     return a
 
 def Trace(x):
-    return sum(diag(x)
+    return sum(diag(x))
 
 def W(H, A_inv):
     return (H.T*A_inv*H)**-1
