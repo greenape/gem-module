@@ -29,7 +29,7 @@ def sigma_hat_sq(n, q, f_D, A_inv, H):
     return (((n-q-2)**-1.)*f_D.T*(A_inv-A_inv*H*((H.T*A_inv*H)**-1)*H.T*A_inv)*f_D)[0, 0]
 
 def sigma_hat_sq_beta(n, q, f_D, A_inv, H_, beta_hat):
-    return ((f_D-H_*beta_hat).T*A_inv*(f_D-H_*(beta_hat)))/(n-q-2.)
+    return ((f_D-H_*beta_hat).T*A_inv*(f_D-H_* beta_hat))/(n-q-2.)
 
 def A(points, delta):
     """
@@ -97,5 +97,5 @@ def make_v_star(d_hat_sq, delta_hat, A_inv, h, H_, t):
         def m(i, j):
             return cor(x[:,i], x_prime[:,j], delta_hat)
         c_x_x_prime = Matrix(x.cols, x_prime.cols, m)
-        return d_hat_sq*(c_x_x_prime - t(x).T*A_inv*t(x_prime) + (h(x).T-t(x).T*A_inv*H_)*((H_.T*A_inv*H_)**-1)*((h(x_prime).T-t(x_prime).T*A_inv*H_).T))
+        return d_hat_sq*(c_x_x_prime - t(x).T*A_inv*t(x_prime) + (h(x).T-t(x).T*A_inv*H_)*((H_.T*A_inv*H_)**-1)* (h(x_prime).T-t(x_prime).T*A_inv*H_).T)
     return f

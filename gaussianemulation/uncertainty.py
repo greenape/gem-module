@@ -16,12 +16,12 @@ def do_E_var(i_i, i_2, V_, E_):
     return (i_i-v) + (i_2 - power(E_, 2.))
 
 def E_var():
-	r_tt = R_tt(D, C, B, m, v)
-	r_hh = R_hh(m, B)
-	r_ht = R_ht(D, B, C, v, m, h)
-	i_1 = I_1(s_hat_sq, A_inv, r_tt, w, r_hh, r_ht, g)
-	i_2 = I_2(b_hat, r_hh, r_ht, e_, r_tt)
-	return do_E_var(i_1, i_2[0,0], V_[0,0], E_[0,0])
+    r_tt = R_tt(D, C, B, m, v)
+    r_hh = R_hh(m, B)
+    r_ht = R_ht(D, B, C, v, m, h)
+    i_1 = I_1(s_hat_sq, A_inv, r_tt, w, r_hh, r_ht, g)
+    i_2 = I_2(b_hat, r_hh, r_ht, e_, r_tt)
+    return do_E_var(i_1, i_2[0,0], V_[0,0], E_[0,0])
 
 def I_1(sigma, A_inv, r_tt, w, r_hh, r_ht, g):
     return sigma*(mpf(1)-Trace(A_inv*r_tt) + Trace(w*(r_hh - 2*r_ht*g + g.T*r_tt*g)))

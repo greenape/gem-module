@@ -19,6 +19,6 @@ def W(H, A_inv):
 def G(A_inv, H):
     return A_inv*H
 
-def e(A_inv, f_F, H, beta_hat):
+def e(A_inv, f_D, H, beta_hat):
     return A_inv*(f_D - H*beta_hat)
 

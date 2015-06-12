@@ -54,9 +54,6 @@ def T_w_element(xw, x, b, c, m, w, w_bar, v, k):
 def posterior_mean_m_w(r_w, b_hat, t_w, e_):
     return r_w*b_hat + t_w*e_
 
-def posterior_mean_i(r_i, r_h, t_i, r_t, b_hat, e_):
-    return (r_i - r_h.T)*b_hat + (t_i - r_t.T)*e_
-
 ## Sensitivity special case 2
 
 def U_w(v, b, c, w_bar):
