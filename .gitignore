@@ -1,3 +1,4 @@
 build
 gaussianemulation.egg-info
 .idea/*
+*.pyc

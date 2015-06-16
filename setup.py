@@ -1,6 +1,6 @@
 from numpy.distutils.core import setup, Extension
 
-__version__ = "0.0.0.9"
+__version__ = "0.0.1.0"
 
 setup(name='gaussianemulation',
         version=__version__,
@@ -9,12 +9,12 @@ setup(name='gaussianemulation',
         author='Jonathan Gray',
         author_email='j.gray@soton.ac.uk',
         license='MPL',
-        packages=['gaussianemulation'],
+        packages=['gaussianemulation', 'gaussianemulation.gemsa'],
         requires=[
         "sympy",
         "mpmath",
     ],
-    ext_modules = [Extension('gaussianemulation.gememu', ['gaussianemulation/gemsa/gememu.pyf', 'gaussianemulation/gemsa/gememu.f90'])]
+    ext_modules = [Extension('gaussianemulation.gemsa.gememu', ['gaussianemulation/gemsa/gememu.pyf', 'gaussianemulation/gemsa/gememu.f90'])]
 )
 
 with open("gaussianemulation/_version.py", "w") as fp:
