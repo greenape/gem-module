@@ -1,6 +1,8 @@
 from numpy.distutils.core import setup, Extension
 
 __version__ = "0.0.1.0"
+with open("gaussianemulation/_version.py", "w") as fp:
+        fp.write("__version__ = '%s'\n" % (__version__,))
 
 setup(name='gaussianemulation',
         version=__version__,
@@ -16,6 +18,3 @@ setup(name='gaussianemulation',
     ],
     ext_modules = [Extension('gaussianemulation.gemsa.gememu', ['gaussianemulation/gemsa/gememu.pyf', 'gaussianemulation/gemsa/gememu.f90'])]
 )
-
-with open("gaussianemulation/_version.py", "w") as fp:
-        fp.write("__version__ = '%s'\n" % (__version__,))
