@@ -15,7 +15,7 @@ def read_main_effects(dir, params, iterations):
         for p in params:
             for i in range(iterations):
                 try:
-                    realisation = [elem for elem in raw.next() if elem != ""]
+                    realisation = [float(elem) for elem in raw.next() if elem != ""]
                     results['Main effect'] += realisation
                     results['param'] += [p]*len(realisation)
                 except:
@@ -38,7 +38,7 @@ def read_joint_effects(dir, params, iterations, gridsize):
             for i in range(iterations):
                 try:
                     # Line goes a1.b1, a1.b2 ... a1.bn, a2.b1, a2.b2 .. an
-                    realisation = [elem for elem in raw.next() if elem != ""]
+                    realisation = [float(elem) for elem in raw.next() if elem != ""]
                     results['Joint effect'] += realisation
                     results['x_param'] += [a]*len(realisation)
                     results['y_param'] += [b]*len(realisation)
